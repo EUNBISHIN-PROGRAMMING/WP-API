@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <title>주소 API 실습</title>
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=1ncd55jrbl"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <button id="menu-button">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+    <h5>My Home Page</h5>
+  </header>
+  
+  <nav id="side-menu" class="hidden">
+    <ul>
+      <li><a href="#">Introduction</a></li>
+      <li><a href="#">Korea</a></li>
+      <li><a href="#">Seoul</a></li>
+      <li><a href="#">Land Mark</a></li>
+    </ul>
+  </nav>
+  <script>
+    let hidden = true;
+    const menuButton = document.getElementById('menu-button');
+    const sideMenu = document.getElementById('side-menu');
+    
+    menuButton.addEventListener('click', () => {
+      if (hidden) {
+        sideMenu.classList.remove('hidden');
+        hidden = false;
+      } else {
+        sideMenu.classList.add('hidden');
+        hidden = false;
+        }
+    });
+  </script>
+
+  <div class="container2">
+    <img src="./image/image1.jpg">
+    <img src="./image/image2.jpg">
+    <img src="./image/image3.jpg" class="big">
+    <img src="./image/image4.jpg" class="big">
+    <img src="./image/image5.jpg">
+    <img src="./image/image6.jpg">
+    <img src="./image/image7.jpg">
+    <img src="./image/image8.jpg">
+    <img src="./image/image9.jpg">
+  </div>
+  
+
+  <div class="section1">
+    <h1>Do you know Seoul?<br/><br/></h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel cupiditate minima, 
+            nesciunt beatae facilis amet nostrum soluta vero nam consequatur deserunt nemo nobis culpa libero esse! 
+            Numquam corrupti omnis porro placeat voluptas quasi ex rerum soluta non impedit fugiat itaque officia, ab mollitia adipisci accusamus ad nobis doloremque odit, 
+            vel labore! Obcaecati doloremque perferendis debitis, quo architecto, dolorum sed exercitationem voluptatibus molestias eius quod consequatur voluptate ducimus minima modi vero sunt optio molestiae incidunt non inventore cumque autem! Cumque molestias voluptatibus magnam architecto? Natus ullam quis temporibus debitis et laudantium nisi hic quam? Vitae modi saepe ducimus quia dolor quas commodi cupiditate quam ex cumque id error quaerat, illo incidunt aspernatur vel laborum officia a. Reiciendis eveniet aperiam, totam quos adipisci voluptatem consequuntur labore quibusdam itaque blanditiis minima esse, magni tempora, illum temporibus. Incidunt natus aliquid rerum iure. Aut animi dolorum sunt corporis libero laboriosam blanditiis iusto nostrum porro consequuntur doloremque rem vero fugiat saepe accusamus sit cum accusantium dolore quas ad facere, iste ducimus. 
+            Ipsum explicabo porro dignissimos corrupti cum debitis omnis itaque culpa ab molestiae provident accusantium dolore doloribus, nulla earum asperiores et, veniam commodi sit. 
+            Eius illum vitae nesciunt omnis debitis sint magnam deleniti deserunt laboriosam impedit.
+            Culpa! 
+      </p>
+  </div>
+
+  <div class="aside">
+    <h1>Place<br/><br/></h1>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Quaerat quo libero error voluptas dolorem eveniet dignissimos, 
+        ipsum perspiciatis consequatur exercitationem facilis ullam doloribus 
+        laborum beatae aut cum adipisci quisquam tenetur delectus mollitia neque, 
+        ea omnis suscipit amet! Nam nostrum vitae nulla adipisci aliquam officiis dicta aperiam,
+        debitis omnis culpa ea, exercitationem quod velit reiciendis vero fuga sit quos praesentium
+        st voluptas! Ducimus, dignissimos dolorem fugit dicta perspiciatis commodi voluptatum facilis
+        eprehenderit, quaerat magni velit neque nulla ullam iste, voluptatibus repellat quam quisquam 
+        vel placeat. Libero sunt neque accusamus, culpa dolor exercitationem delectus aut molestiae. 
+        Hic earum alias, quisquam mollitia ex sint deleniti! Eum eveniet dolorem distinctio nisi 
+        harum deleniti sunt. Neque eligendi earum consequatur aspernatur deserunt veritatis natus 
+        voluptates dolore, tempora quasi. Excepturi officia placeat totam nam eligendi, 
+        delectus eum laborum? Aperiam sapiente atque vitae harum fugiat et repudiandae, 
+        sed tenetur illum beatae in inventore aut eum at. Soluta omnis temporibus odio iusto,
+        debitis nostrum explicabo autem suscipit accusantium non similique, deserunt officia ea 
+        id aliquam qui consequuntur voluptates numquam nesciunt neque? 
+        Eligendi in officiis, labore reprehenderit et sint accusantium ea vitae, 
+        sunt alias fugiat dignissimos. Consequatur explicabo dolores molestias at minus 
+        exercitationem distinctio nihil totam consectetur architecto, non reiciendis?
+      </p>
+  </div>
+
+  <div class="section2">
+    <h1>Location</h1>
+    <div id="map"></div>
+      <script>
+        var mapOptions = {
+          center: new naver.maps.LatLng(37.3595704, 127.105399),
+          zoom: 10
+      };
+        var map = new naver.maps.Map('map', mapOptions);
+      </script>
+
+  <div class="section3">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Soluta officia repudiandae distinctio ea et dignissimos, 
+      harum delectus voluptatibus ipsam iure quaerat ex voluptatem error voluptate dolorum asperiores nemo doloremque ipsa optio nulla excepturi at. 
+      Sequi voluptatibus debitis impedit eveniet quo mollitia tempore, voluptate ex officia in excepturi. 
+      Vitae quasi inventore dolore ducimus iure temporibus neque a voluptas molestiae quam mollitia velit error saepe provident,
+      hic tempora aperiam sapiente, impedit eius praesentium cupiditate adipisci ut ipsum?
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+      Nesciunt laudantium aut ad expedita labore, corrupti, suscipit veritatis sint vel reprehenderit sapiente laborum deleniti soluta, nostrum cum. 
+      Praesentium eaque qui ullam blanditiis quae iste nam fugiat, saepe numquam, minima eum harum suscipit voluptate accusamus expedita 
+      voluptatem obcaecati distinctio culpa exercitationem! Rem ea odit optio molestiae repellendus alias, assumenda perspiciatis quis voluptates 
+      dignissimos ipsum veniam maxime deleniti nihil id, 
+      sed repudiandae quia harum, libero ipsam ut ipsa dolorum in fugit. Minus, itaque.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias repellendus quam repudiandae officia sed temporibus, 
+      nihil quia doloribus rem voluptatum quidem dolor, nisi odio doloremque iste corrupti maxime!
+      Sunt ullam officia nobis consequatur dignissimos labore debitis reiciendis adipisci suscipit placeat vitae nemo dolor iusto soluta eos optio numquam, 
+      natus perspiciatis asperiores atque omnis. Eos voluptatum enim consequatur quisquam rem, et minima explicabo qui architecto aliquid iusto! 
+      Fugiat natus tenetur aliquid quo at, repellendus unde inventore earum reprehenderit animi sunt ab! 
+      Soluta voluptates tempora corrupti esse nihil deserunt numquam rem tempore perferendis fugiat, aperiam cumque. 
+      Expedita neque doloribus eaque cum earum. 
+    </p>
+  </div>
+
+  <div class="section4">
+    <p>2020(EunBi)all rights reserved</p>
+  </div>
+</body>
+</html>
